@@ -5,6 +5,17 @@
     <meta charset='utf-8' />
     <meta http-equiv="X-UA-Compatible" content="chrome=1" />
     <meta name="description" content="How To Create a JvectorMap : " />
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-12306636-4', 'anshumania.github.io');
+	  ga('send', 'pageview');
+
+	</script>
+
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 	<link rel="stylesheet" href="stylesheets/jqvmap.css">
@@ -61,7 +72,7 @@
     <div id="main_content_wrap" class="outer">
 
       <section id="main_content" class="inner">
-	  	<p> <a href="http://stackoverflow.com/questions/19465664/inkscape-highlight-different-parts-of-a-svg-and-manipulate-the-svg-map-in-html?noredirect=1#comment28885665_19465664">This stackoverflow post</a> was my original question. This page outlines the effort I went through in creating a usable javascript map of a city. The city I am interested is Delhi, India and I am specifically interested in its constituent assemblies. After a bit of research I found that in order to have usable image which can be manipulated via javascript the format to be targetted should be SVG.
+	  	<p> <a href="http://stackoverflow.com/questions/19465664/inkscape-highlight-different-parts-of-a-svg-and-manipulate-the-svg-map-in-html?noredirect=1#comment28885665_19465664">This stackoverflow post</a> was my original question. This page outlines the effort I went through in creating a usable javascript map of a city. The city I am interested is Delhi, India and I am specifically interested in its constituent assemblies. After a bit of research I found that in order to have usable image which can be manipulated via javascript the format to be targetted should be SVG. The final output is <a href="index.html">here</a>.
 		</p>
 		
         <h3>
@@ -80,7 +91,7 @@
 <h3>
 <a name="process-svg" class="anchor" href="#process-svg"><span class="octicon octicon-link"></span></a>3. Process SVG</h3>
 <p> A couple steps involved here. 
-	<ol> In Inkscape
+	<ol> In <a href="http://inkscape.org/">Inkscape</a>
 		<li>Get the map outline. Open the SVG in inkscape and select the 'Edit paths by node' button. Click on any one of the district lines. This will select the nodes in the picture.</li>
 		<li>Copy and Paste (ctrl+c/ctrl+v) to Save into a new file.</li>
 		<li>In the new file again select the 'Edit paths by by node' button and then Path->Break Apart</li>
@@ -130,7 +141,28 @@
 	</code>
 	</li>
 	<br>
-	You can refer to the code from here.
+	You can refer as example to the html code from <a href="https://github.com/anshumania/jvectormap/blob/gh-pages/index.html">here</a>
+</p>
+<h3>
+<a name="references" class="anchor" href="#references"><span class="octicon octicon-link"></span></a>6. References</h3>
+<p>	
+	Note that the <a href="https://github.com/anshumania/jvectormap/blob/gh-pages/javascripts/jqvmap/maps/jquery.vmap.delhi.js">jvector map for delhi</a> has ids which correspond to the official numbering for assembly constituents. 
+	<li>The pattern for the ids is a number followed by an encoding based on its region in Delhi.</li>
+	<li>The numbers are from the <a href="http://gisserver1.nic.in/ecimaps/DelhiAc.aspx">National Informatics Center website</a>.</li>
+	<li>The regions are as described at <a href="http://ceodelhi.gov.in/">Official Website, Chief Electoral Officer, Delhi</a>.</li> 
+	<br>The encodings are as follows
+	
+	<table border="1">
+		<tr><th>Encoding</th><th>Region</th></tr>
+		<tr><td>c</td><td>Central Delhi</td></tr>
+		<tr><td>e</td><td>East Delhi</td></tr>
+		<tr><td>nd</td><td>New Delhi</td></tr>
+		<tr><td>n</td><td>Nort Delhi</td></tr>
+		<tr><td>ne</td><td>North East Delhi</td></tr>
+		<tr><td>nw</td><td>Nort West Delhi</td></tr>
+		<tr><td>s</td><td>South Delhi</td></tr>
+		<tr><td>sw</td><td>South West Delhi</td></tr>
+	</table>
 </p>
       </section>
     </div>
